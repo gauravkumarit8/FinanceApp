@@ -1,0 +1,45 @@
+{
+  "name": "Android Kotlin - Finance App",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistribution": "ms"
+    }
+  },
+
+  "onCreateCommand": "bash .devcontainer/setup-android.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mathiasfrohlich.Kotlin",
+        "fwcd.kotlin",
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "esbenp.prettier-vscode",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "java.home": "/usr/local/sdkman/candidates/java/current",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  },
+
+  "forwardPorts": [],
+  "remoteUser": "vscode",
+
+  "postCreateCommand": "echo '✅ Android Codespace ready! Run: ./gradlew assembleDebug'",
+
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  }
+}
